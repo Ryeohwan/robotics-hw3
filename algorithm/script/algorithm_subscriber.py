@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 import rospy
-from topic_custom.msg import TimePose
+from common_msgs.msg import TimePose
+
 
 def callback(msg):
-    print "subscribe:", msg.timestamp.secs%100, msg.pose.x, msg.pose.y, msg.pose.theta
+    print "subscribe:", msg.info, msg.pose.x, msg.pose.y, msg.pose.theta
 
 rospy.init_node('algorithm_subscriber')
-sub = rospy.Subscriber('common_msg', TimePose, callback)
+sub = rospy.Subscriber('common_msgs', TimePose, callback)
 rospy.spin()
