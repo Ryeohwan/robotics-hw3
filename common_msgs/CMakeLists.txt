@@ -8,6 +8,12 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
+# Generate services in the 'srv' folder
+add_service_files(
+  FILES
+  hw3.srv
+)
+
 # Generate messages in the 'msg' folder
 add_message_files(
   FILES
@@ -19,6 +25,7 @@ generate_messages(
   geometry_msgs
   std_msgs
 )
+
 catkin_package(
-  CATKIN_DEPENDS geometry_msgs rospy std_msgs
+  CATKIN_DEPENDS geometry_msgs rospy std_msgs message_runtime
 )
